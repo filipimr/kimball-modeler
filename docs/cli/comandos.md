@@ -214,7 +214,7 @@ Para repositórios de migração. Sem opções, gera um script único, como o `e
 `--force`
 :   Gera mesmo com erros de validação.
 
-Para o código de alguns objetos, use `--object` (pode repetir) com `schema.tabela` ou `enum:nome`, e escolha o alcance:
+Para o código de alguns objetos, use `--object` (pode repetir) com `schema.tabela`, só `tabela` (quando o nome não se repete em outro schema) ou `enum:nome`, e escolha o alcance:
 
 `--only`
 :   Só o objeto.

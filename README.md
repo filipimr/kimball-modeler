@@ -205,7 +205,7 @@ O manual completo fica em **[kimball-modeler.pages.dev/docs](https://kimball-mod
 | --- | --- |
 | **[Site](https://kimball-modeler.pages.dev/)** | apresentação do Kimball Modeler e downloads |
 | **[Primeiros passos](https://kimball-modeler.pages.dev/docs/primeiros-passos/)** | do primeiro modelo ao primeiro script DDL |
-| **[Novidades](https://kimball-modeler.pages.dev/docs/novidades/)** | o que mudou em cada versão |
+| **[Notas de versão](https://kimball-modeler.pages.dev/docs/notas-de-versao/)** | o que mudou em cada versão, com novidades, correções e como atualizar |
 | **[Exportar](https://kimball-modeler.pages.dev/docs/guia/exportar/)** | DDL, diagramas, dicionário, JSON Schema, XSD e dados de teste |
 | **[Comandos da CLI](https://kimball-modeler.pages.dev/docs/cli/comandos/)** | todos os comandos do terminal e uso em CI |
 

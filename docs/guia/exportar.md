@@ -20,6 +20,9 @@ O botão laranja **Exportar** no topo (++ctrl+e++) abre a folha com as opções:
 
 A prévia mostra o SQL do modelo inteiro e dá para ver em outro banco sem trocar o destino do projeto.
 
+Dialeto
+:   o do projeto ou qualquer banco suportado, em cada versão: PostgreSQL (12 a 18), SQL Server (2016 a 2025), Snowflake, MySQL (8.0, 8.4 e 9.0) e Oracle (19c, 21c e 23ai).
+
 Formato
 :   script único, um arquivo por objeto (`001_schema_vendas.sql`, `002_table_...`), um por tipo (schemas, enums, tabelas, índices, chaves estrangeiras) ou cada tabela com seus índices. Rodados em ordem de nome, criam o banco.
 

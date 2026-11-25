@@ -53,7 +53,7 @@ Limites, em qualquer nível:
 :   o provedor e o modelo usados.
 
 **Neste projeto**
-:   **Abordagem** (Não definida, Relacional, Dimensional ou Data Vault), **Idioma das respostas** e **Instruções do projeto** (convenções, nomes). Ficam em `<arquivo>.ai.json`, ao lado do `.dbml`, sem segredos. Exige o modelo salvo.
+:   **Abordagem** (Não definida, Relacional, Dimensional ou Data Vault), **Modelo padrão** (o que o assistente usa neste projeto; sem ele, vale o último usado), **Idioma das respostas** e **Instruções do projeto** (convenções, nomes). Ficam em `<arquivo>.ai.json`, ao lado do `.dbml`, sem segredos. Exige o modelo salvo: num modelo novo ou no exemplo, os campos ficam desligados e o botão **Salvar o modelo…** resolve.
 
 **Neste computador**
 :   a opção de mostrar o botão do assistente no canvas. ++ctrl+j++ abre o assistente mesmo com o botão escondido.

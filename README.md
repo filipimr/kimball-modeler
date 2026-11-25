@@ -24,7 +24,7 @@ Modelador de bancos de dados multi-dialeto para desktop (Windows, Linux e macOS)
   <a href="https://github.com/filipimr/kimball-modeler/releases/latest"><img src="https://img.shields.io/github/v/release/filipimr/kimball-modeler?style=flat-square&label=Release&color=EF8943" alt="Última Release" /></a>
   <img src="https://img.shields.io/badge/Plataformas-Windows_%C2%B7_Linux_%C2%B7_macOS-1a1a1a?style=flat-square" alt="Plataformas" />
   <img src="https://img.shields.io/badge/Dialetos-PostgreSQL_%C2%B7_SQL_Server_%C2%B7_Snowflake_%C2%B7_MySQL_%C2%B7_Oracle-EF8943?style=flat-square" alt="Dialetos" />
-  <img src="https://img.shields.io/badge/MCP-36_Tools_%2B_5_Skills-8A2BE2?style=flat-square" alt="MCP Server" />
+  <img src="https://img.shields.io/badge/MCP-39_Tools_%2B_5_Skills-8A2BE2?style=flat-square" alt="MCP Server" />
   <img src="https://img.shields.io/badge/Auto--Update-Assinado_(HTTPS)-22c55e?style=flat-square" alt="Auto-Update Assinado" />
 </p>
 
@@ -88,7 +88,7 @@ Comandos principais do aplicativo e do terminal:
 
 ### Conectar agentes de IA na IDE (MCP e skills)
 
-O binário `kimball` inclui um servidor **MCP** (JSON-RPC 2.0 via stdio) com **36 ferramentas** e **5 skills** embutidas para Claude Code, Cursor, VS Code (GitHub Copilot), Windsurf e Codex. No aplicativo, abra `Ctrl K` → **"Conectar a IA da IDE (MCP)…"** ou execute no terminal:
+O binário `kimball` inclui um servidor **MCP** (JSON-RPC 2.0 via stdio) com **39 ferramentas** e **5 skills** embutidas para Claude Code, Cursor, VS Code (GitHub Copilot), Windsurf e Codex. No aplicativo, abra `Ctrl K` → **"Conectar a IA da IDE (MCP)…"** ou execute no terminal:
 
 ```bash
 kimball mcp-config modelo.dbml
@@ -123,7 +123,7 @@ kimball testdata     vendas.dbml --rows 50 -o seed.sql
 ## Recursos
 
 - **Relacionamentos com propagação automática:** desenhe relações 1:1, 1:N ou N:N arrastando da tabela pai para a filha. O Kimball cria as colunas de FK (`{pk}_{tabela_pai}`), a tabela associativa `many_a_has_many_b`, o índice da FK e as ações padrão `ON DELETE` e `ON UPDATE`. Ao mudar a chave do pai, as colunas dos filhos acompanham automaticamente.
-- **Assistente de IA no app** (`Ctrl J`): conecte seu provedor (Anthropic, OpenAI, Google, Ollama local ou servidor compatível com a API da OpenAI); a chave fica no cofre do sistema e só a estrutura do modelo é enviada, nunca dados. Pergunte sobre uma tabela, um problema ou um trecho do DBML; mudanças viram proposta tracejada em laranja e só entram com **Aplicar** (`Ctrl Enter`), desfazível com `Ctrl Z`.
+- **Assistente de IA no app** (`Ctrl J`): conecte seu provedor (Anthropic, OpenAI, Google, Ollama local ou servidor compatível com a API da OpenAI); a chave fica no cofre do sistema e só a estrutura do modelo é enviada, nunca dados. Pergunte sobre uma tabela, um problema ou um trecho do DBML; mudanças viram proposta tracejada em laranja e só entram com **Aplicar** (`Ctrl Enter`), desfazível com `Ctrl Z`. Ele age como um **DBA sênior** e, nos provedores com ferramentas, consulta sozinho a validação, as tabelas, o SQL, as capacidades do banco e o diagrama antes de responder.
 - **Desempenho em modelos grandes:** projetado para trabalhar com fluidez em modelos com **500+ tabelas**, com auto-layout automático (`Shift L`) e edição instantânea.
 - **Editor DBML com LSP próprio:** autocompletar contextual (`Ctrl Espaço`), diagnósticos em tempo real, ir para definição (`F12`), renomear em todo o arquivo (`F2`) e formatador (`Shift Alt F`), disponível no editor embutido e via `kimball lsp`.
 - **Validação e correção em um clique:** detecta conflitos de namespace por banco, `UNIQUE` redundante com a PK, `SET NULL` em coluna `NOT NULL` e FKs sem índice, oferecendo **Aplicar correção** com suporte a Desfazer.
@@ -202,10 +202,12 @@ Os passos destrutivos (`DROP` e `REBUILD`) chegam desmarcados por padrão e exig
 - ✅ Engenharia reversa de scripts SQL/DDL, planilhas Excel/CSV, **Modelo Físico XML (`.pdm`)** e PostgreSQL via SSL
 - ✅ Diff visual Modelo × Banco com presets de ambiente, passos destrutivos protegidos e execução transacional
 - ✅ Exportação de diagramas (SVG vetorial, PNG, JPG, PDF, Mermaid), Dicionário (HTML, Word `.rtf`, Excel), JSON Schema, XSD e Dados de Teste
-- ✅ CLI completa de modelagem/CI, Servidor MCP com **36 ferramentas** e **5 skills** de IA embutidas
+- ✅ CLI completa de modelagem/CI, Servidor MCP com **39 ferramentas** e **5 skills** de IA embutidas
 - ✅ Atualização automática assinada via GitHub Releases
 - ✅ Assistente de IA com o seu provedor (chave no cofre do sistema), propostas revisáveis no canvas
-- 🟡 Assistente: login de conta e uso de ferramentas pelo modelo
+- ✅ Assistente DBA que consulta o modelo com ferramentas antes de responder
+- ✅ Claude Code pela sua assinatura, com três níveis de permissão
+- 🟡 Assistente: login de conta pelo navegador nos outros provedores
 - 🟡 Conectores diretos de catálogo para **SQL Server**, **Snowflake**, **MySQL** e **Oracle**
 - 🟡 Novos dialetos: **BigQuery** e **Databricks (Unity Catalog)**
 - 🟡 Integração bidirecional com **dbt** e **ODCS v3**

@@ -123,6 +123,7 @@ kimball testdata     vendas.dbml --rows 50 -o seed.sql
 ## Recursos
 
 - **Relacionamentos com propagação automática:** desenhe relações 1:1, 1:N ou N:N arrastando da tabela pai para a filha. O Kimball cria as colunas de FK (`{pk}_{tabela_pai}`), a tabela associativa `many_a_has_many_b`, o índice da FK e as ações padrão `ON DELETE` e `ON UPDATE`. Ao mudar a chave do pai, as colunas dos filhos acompanham automaticamente.
+- **Assistente de IA no app** (`Ctrl J`): conecte seu provedor (Anthropic, OpenAI, Google, Ollama local ou servidor compatível com a API da OpenAI); a chave fica no cofre do sistema e só a estrutura do modelo é enviada, nunca dados. Pergunte sobre uma tabela, um problema ou um trecho do DBML; mudanças viram proposta tracejada em laranja e só entram com **Aplicar** (`Ctrl Enter`), desfazível com `Ctrl Z`.
 - **Desempenho em modelos grandes:** projetado para trabalhar com fluidez em modelos com **500+ tabelas**, com auto-layout automático (`Shift L`) e edição instantânea.
 - **Editor DBML com LSP próprio:** autocompletar contextual (`Ctrl Espaço`), diagnósticos em tempo real, ir para definição (`F12`), renomear em todo o arquivo (`F2`) e formatador (`Shift Alt F`), disponível no editor embutido e via `kimball lsp`.
 - **Validação e correção em um clique:** detecta conflitos de namespace por banco, `UNIQUE` redundante com a PK, `SET NULL` em coluna `NOT NULL` e FKs sem índice, oferecendo **Aplicar correção** com suporte a Desfazer.
@@ -188,6 +189,7 @@ Os passos destrutivos (`DROP` e `REBUILD`) chegam desmarcados por padrão e exig
 | `Del` | apagar a seleção (remove colunas propagadas junto com a relação e mostra Desfazer) |
 | `Ctrl + Roda` / `Ctrl =` / `Ctrl -` | zoom de **10% a 500%** (`Ctrl 0` restaura 100%) |
 | `F12` / `F2` / `Shift Alt F` | no editor DBML: ir para definição / renomear símbolo em todo o arquivo / formatar |
+| `Ctrl J` / `Ctrl M` / `Ctrl Enter` | assistente de IA / trocar o modelo que responde / aplicar a proposta |
 | `Ctrl ,` / `F1` / `Esc` | abrir configurações / abrir guia de uso / fechar popover, edição, folha ou comparação |
 
 ## Roadmap
@@ -202,6 +204,8 @@ Os passos destrutivos (`DROP` e `REBUILD`) chegam desmarcados por padrão e exig
 - ✅ Exportação de diagramas (SVG vetorial, PNG, JPG, PDF, Mermaid), Dicionário (HTML, Word `.rtf`, Excel), JSON Schema, XSD e Dados de Teste
 - ✅ CLI completa de modelagem/CI, Servidor MCP com **36 ferramentas** e **5 skills** de IA embutidas
 - ✅ Atualização automática assinada via GitHub Releases
+- ✅ Assistente de IA com o seu provedor (chave no cofre do sistema), propostas revisáveis no canvas
+- 🟡 Assistente: login de conta e uso de ferramentas pelo modelo
 - 🟡 Conectores diretos de catálogo para **SQL Server**, **Snowflake**, **MySQL** e **Oracle**
 - 🟡 Novos dialetos: **BigQuery** e **Databricks (Unity Catalog)**
 - 🟡 Integração bidirecional com **dbt** e **ODCS v3**

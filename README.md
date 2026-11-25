@@ -11,6 +11,8 @@
 Modelador de bancos de dados multi-dialeto para desktop (Windows, Linux e macOS), com canvas visual, editor DBML, CLI e servidor MCP para agentes de IA.
 
 <p>
+  <a href="https://kimball-modeler.pages.dev/"><strong>Site</strong></a> &middot;
+  <a href="https://kimball-modeler.pages.dev/docs/"><strong>Documentação</strong></a> &middot;
   <a href="#instalar"><strong>Instalar</strong></a> &middot;
   <a href="#uso-rápido"><strong>Uso rápido</strong></a> &middot;
   <a href="#recursos"><strong>Recursos</strong></a> &middot;
@@ -22,6 +24,7 @@ Modelador de bancos de dados multi-dialeto para desktop (Windows, Linux e macOS)
 
 <p>
   <a href="https://github.com/filipimr/kimball-modeler/releases/latest"><img src="https://img.shields.io/github/v/release/filipimr/kimball-modeler?style=flat-square&label=Release&color=EF8943" alt="Última Release" /></a>
+  <a href="https://kimball-modeler.pages.dev/docs/"><img src="https://img.shields.io/badge/Docs-kimball--modeler.pages.dev-1a1a1a?style=flat-square" alt="Documentação" /></a>
   <img src="https://img.shields.io/badge/Plataformas-Windows_%C2%B7_Linux_%C2%B7_macOS-1a1a1a?style=flat-square" alt="Plataformas" />
   <img src="https://img.shields.io/badge/Dialetos-PostgreSQL_%C2%B7_SQL_Server_%C2%B7_Snowflake_%C2%B7_MySQL_%C2%B7_Oracle-EF8943?style=flat-square" alt="Dialetos" />
   <img src="https://img.shields.io/badge/MCP-39_Tools_%2B_5_Skills-8A2BE2?style=flat-square" alt="MCP Server" />
@@ -64,6 +67,8 @@ O mesmo modelo gera DDL e scripts `ALTER` para **PostgreSQL 12–18**, **SQL Ser
 Baixe o instalador para o seu sistema operacional na página oficial de releases:
 
 👉 **[Baixar última versão (GitHub Releases)](https://github.com/filipimr/kimball-modeler/releases/latest)**
+
+Passo a passo de instalação e atualização, por sistema: [Instalação e atualizações](https://kimball-modeler.pages.dev/docs/instalacao/).
 
 | Sistema | Pacotes | Como instalar |
 |---|---|---|
@@ -191,6 +196,20 @@ Os passos destrutivos (`DROP` e `REBUILD`) chegam desmarcados por padrão e exig
 | `F12` / `F2` / `Shift Alt F` | no editor DBML: ir para definição / renomear símbolo em todo o arquivo / formatar |
 | `Ctrl J` / `Ctrl M` / `Ctrl Enter` | assistente de IA / trocar o modelo que responde / aplicar a proposta |
 | `Ctrl ,` / `F1` / `Esc` | abrir configurações / abrir guia de uso / fechar popover, edição, folha ou comparação |
+
+## Documentação
+
+O manual completo fica em **[kimball-modeler.pages.dev/docs](https://kimball-modeler.pages.dev/docs/)**, também dentro do app na tecla `F1`.
+
+| Página | Conteúdo |
+| --- | --- |
+| **[Site](https://kimball-modeler.pages.dev/)** | apresentação do Kimball Modeler e downloads |
+| **[Primeiros passos](https://kimball-modeler.pages.dev/docs/primeiros-passos/)** | do primeiro modelo ao primeiro script DDL |
+| **[Novidades](https://kimball-modeler.pages.dev/docs/novidades/)** | o que mudou em cada versão |
+| **[Exportar](https://kimball-modeler.pages.dev/docs/guia/exportar/)** | DDL, diagramas, dicionário, JSON Schema, XSD e dados de teste |
+| **[Comandos da CLI](https://kimball-modeler.pages.dev/docs/cli/comandos/)** | todos os comandos do terminal e uso em CI |
+
+Problemas e sugestões: [Issues](https://github.com/filipimr/kimball-modeler/issues).
 
 ## Roadmap
 

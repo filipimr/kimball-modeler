@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/app-icon.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/app-icon.svg" />
-  <img src="assets/app-icon.svg" alt="Kimball Modeler Logo" width="112" height="112" />
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/app-icon.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/app-icon.svg" />
+  <img src="docs/assets/app-icon.svg" alt="Kimball Modeler Logo" width="112" height="112" />
 </picture>
 
 # Kimball Modeler
@@ -32,9 +32,9 @@ Modelador de bancos de dados multi-dialeto para desktop (Windows, Linux e macOS)
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/tela-area-de-trabalho.png" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/tela-area-de-trabalho-claro.png" />
-    <img src="assets/tela-area-de-trabalho.png" alt="Kimball Modeler: visualização dividida (canvas e editor DBML com LSP)" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/tela-area-de-trabalho.png" />
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/tela-area-de-trabalho-claro.png" />
+    <img src="docs/assets/tela-area-de-trabalho.png" alt="Kimball Modeler: visualização dividida (canvas e editor DBML com LSP)" width="100%" />
   </picture>
   <p><sub><strong>Modo Dividido (<code>Ctrl 2</code>):</strong> edição de colunas na própria tabela com autocompletar de tipo à esquerda e editor DBML sincronizado à direita.</sub></p>
 </div>
@@ -53,9 +53,9 @@ O mesmo modelo gera DDL e scripts `ALTER` para **PostgreSQL 12–18**, **SQL Ser
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/pipeline-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/pipeline-light.svg" />
-    <img src="assets/pipeline-dark.svg" alt="Fluxo de modelagem, validação e exportação do Kimball Modeler" width="640" />
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/pipeline-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/pipeline-light.svg" />
+    <img src="docs/assets/pipeline-dark.svg" alt="Fluxo de modelagem, validação e exportação do Kimball Modeler" width="640" />
   </picture>
 </div>
 
@@ -143,14 +143,14 @@ kimball testdata     vendas.dbml --rows 50 -o seed.sql
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/tela-inicio.png" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/tela-inicio-claro.png" />
-    <img src="assets/tela-inicio.png" alt="Tela inicial (Launcher) do Kimball Modeler" width="49%" />
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/tela-inicio.png" />
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/tela-inicio-claro.png" />
+    <img src="docs/assets/tela-inicio.png" alt="Tela inicial (Launcher) do Kimball Modeler" width="49%" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/tela-configuracoes.png" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/tela-configuracoes-claro.png" />
-    <img src="assets/tela-configuracoes.png" alt="Tela de configurações do Kimball Modeler" width="49%" />
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/tela-configuracoes.png" />
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/tela-configuracoes-claro.png" />
+    <img src="docs/assets/tela-configuracoes.png" alt="Tela de configurações do Kimball Modeler" width="49%" />
   </picture>
   <p><sub><strong>À esquerda:</strong> tela inicial (Launcher) com restauração de cópia de recuperação, busca rápida (<code>Ctrl K</code>), importação e modelos recentes. <strong>À direita:</strong> configurações de notação visual, padrões de nome de FK e validação (temas escuro e claro).</sub></p>
 </div>
@@ -163,9 +163,9 @@ Os passos destrutivos (`DROP` e `REBUILD`) chegam desmarcados por padrão e exig
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/tela-diff-e-alter.png" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/tela-diff-e-alter-claro.png" />
-    <img src="assets/tela-diff-e-alter.png" alt="Comparação visual Modelo x Banco e geração de script ALTER no Kimball Modeler" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/tela-diff-e-alter.png" />
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/tela-diff-e-alter-claro.png" />
+    <img src="docs/assets/tela-diff-e-alter.png" alt="Comparação visual Modelo x Banco e geração de script ALTER no Kimball Modeler" width="100%" />
   </picture>
   <p><sub><strong>Folha Atualizar o banco:</strong> passos diretos (<code>CREATE</code>, <code>ADD</code>, <code>ALTER</code>) vêm marcados; operações que recriam tabelas (<code>REBUILD</code>) ou apagam dados (<code>DROP</code>) ficam desmarcadas até confirmação.</sub></p>
 </div>

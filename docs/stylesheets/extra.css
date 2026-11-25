@@ -1,0 +1,293 @@
+/* Kimball Modeler · tema da documentação (esquemas kimball-dark e kimball-light).
+ * Tokens iguais aos do site e do app. Laranja só em links, seleção e ação principal. */
+
+/* Fontes locais (SIL Open Font License 1.1, ver assets/fonts/OFL.txt) */
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../assets/fonts/inter-latin-wght-normal.woff2") format("woff2-variations"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../assets/fonts/inter-latin-ext-wght-normal.woff2") format("woff2-variations"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/inter-tight-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/inter-tight-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/inter-tight-latin-700-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/inter-tight-latin-ext-700-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 100 800; font-display: swap; src: url("../assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2-variations"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 100 800; font-display: swap; src: url("../assets/fonts/jetbrains-mono-latin-ext-wght-normal.woff2") format("woff2-variations"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+
+:root { --md-text-font: "Inter"; --md-code-font: "JetBrains Mono"; }
+
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-24: 96px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+  --font-display: "Inter Tight", Inter, system-ui, sans-serif;
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+/* Tema escuro é a base; o claro sobrescreve só o que muda */
+[data-md-color-scheme^="kimball"] {
+  color-scheme: dark;
+  --bg: #0a0a0a;
+  --surface-1: #111111;
+  --surface-2: #1a1a1a;
+  --border: #262626;
+  --border-strong: #3a3a3a;
+  --ink: #f5f5f5;
+  --ink-muted: #a3a3a3;
+  --ink-subtle: #8a8a8a;
+  --accent: #ef8943;
+  --accent-strong: #ef8943;
+  --accent-ink: #0a0a0a;
+  --accent-soft: rgba(239, 137, 67, 0.16);
+  --btn-primary-bg: var(--ink);
+  --btn-primary-ink: var(--bg);
+  --bead-orange: #ef8943;
+  --bead-teal: #5eead4;
+  --bead-violet: #a78bfa;
+  --pencil: #a3a3a3;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --canvas-grid: #1f1f1f;
+  --key-pk: #facc15;
+  --key-fk: var(--accent);
+  --type-string: #4ade80;
+  --type-number: #60a5fa;
+  --type-time: #f472b6;
+  --type-bool: #c084fc;
+  --type-uuid: #22d3ee;
+  --type-custom: #fde047;
+  --tbl-blue: #3b82f6;
+  --tbl-teal: #14b8a6;
+  --tbl-green: #22c55e;
+  --tbl-purple: #a855f7;
+  --tbl-pink: #ec4899;
+  --tbl-red: #ef4444;
+  --tbl-yellow: #eab308;
+  --tbl-gray: #6b7280;
+  --shadow-card: 0 24px 48px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 0 1px rgba(239, 137, 67, 0.5), 0 0 32px rgba(239, 137, 67, 0.2);
+}
+[data-md-color-scheme="kimball-light"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface-1: #fafafa;
+  --surface-2: #f4f4f4;
+  --border: #e5e5e5;
+  --border-strong: #d4d4d4;
+  --ink: #0a0a0a;
+  --ink-muted: #525252;
+  --ink-subtle: #737373;
+  --accent: #b4530f;
+  --accent-soft: #fdeadc;
+  --btn-primary-bg: var(--ink);
+  --btn-primary-ink: var(--bg);
+  --bead-teal: #14b8a6;
+  --bead-violet: #8b5cf6;
+  --pencil: #404040;
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #b91c1c;
+  --canvas-grid: #e5e5e5;
+  --key-pk: #a16207;
+  --key-fk: var(--accent);
+  --type-string: #15803d;
+  --type-number: #1d4ed8;
+  --type-time: #be185d;
+  --type-bool: #7e22ce;
+  --type-uuid: #0e7490;
+  --type-custom: #854d0e;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 0 1px rgba(239, 137, 67, 0.6), 0 0 24px rgba(239, 137, 67, 0.16);
+}
+
+/* Tons que dependem do tema (fundos translúcidos do cabeçalho e dos botões) */
+[data-md-color-scheme="kimball-dark"] {
+  --md-default-bg-color--light: rgba(10, 10, 10, .85);
+  --md-default-bg-color--lighter: rgba(10, 10, 10, .6);
+  --md-default-fg-color--lightest: rgba(245, 245, 245, .08);
+  --md-code-bg-color--light: rgba(245, 245, 245, .04);
+  --md-code-bg-color--lighter: rgba(245, 245, 245, .02);
+}
+[data-md-color-scheme="kimball-light"] {
+  --md-default-bg-color--light: rgba(255, 255, 255, .85);
+  --md-default-bg-color--lighter: rgba(255, 255, 255, .6);
+  --md-default-fg-color--lightest: rgba(10, 10, 10, .06);
+  --md-code-bg-color--light: rgba(10, 10, 10, .03);
+  --md-code-bg-color--lighter: rgba(10, 10, 10, .015);
+}
+
+/* Mapeamento para as variáveis do Zensical (as mesmas do Material, mais as da variante modern) */
+[data-md-color-scheme^="kimball"] {
+  --md-default-bg-color: var(--bg);
+  --md-default-fg-color: var(--ink);
+  --md-default-fg-color--light: var(--ink-muted);
+  --md-default-fg-color--lighter: var(--ink-subtle);
+  --md-primary-fg-color: var(--bg);
+  --md-primary-fg-color--light: var(--surface-1);
+  --md-primary-fg-color--dark: var(--bg);
+  --md-primary-bg-color: var(--ink);
+  --md-primary-bg-color--light: var(--ink-muted);
+  --md-accent-fg-color: var(--accent);
+  --md-accent-fg-color--transparent: var(--accent-soft);
+  --md-accent-bg-color: var(--accent-ink);
+  --md-typeset-color: var(--ink);
+  --md-typeset-a-color: var(--accent);
+  --md-typeset-mark-color: var(--accent-soft);
+  --md-typeset-table-color: var(--border);
+  --md-typeset-table-color--light: var(--surface-1);
+  --md-typeset-kbd-color: var(--surface-2);
+  --md-typeset-kbd-accent-color: var(--border-strong);
+  --md-typeset-kbd-border-color: var(--border-strong);
+  --md-code-fg-color: var(--ink);
+  --md-code-bg-color: var(--surface-1);
+  --md-code-hl-color: var(--accent-strong);
+  --md-code-hl-color--light: var(--accent-soft);
+  --md-code-hl-keyword-color: var(--accent);
+  --md-code-hl-string-color: var(--type-string);
+  --md-code-hl-number-color: var(--type-number);
+  --md-code-hl-name-color: var(--ink);
+  --md-code-hl-function-color: var(--type-uuid);
+  --md-code-hl-constant-color: var(--type-custom);
+  --md-code-hl-special-color: var(--type-time);
+  --md-code-hl-operator-color: var(--ink-muted);
+  --md-code-hl-punctuation-color: var(--ink-muted);
+  --md-code-hl-comment-color: var(--ink-subtle);
+  --md-code-hl-generic-color: var(--ink-muted);
+  --md-code-hl-variable-color: var(--ink);
+  --md-admonition-fg-color: var(--ink);
+  --md-admonition-bg-color: var(--surface-1);
+  --md-footer-fg-color: var(--ink);
+  --md-footer-fg-color--light: var(--ink-muted);
+  --md-footer-fg-color--lighter: var(--ink-subtle);
+  --md-footer-bg-color: var(--bg);
+  --md-footer-bg-color--dark: var(--bg);
+  --md-shadow-z1: none;
+  --md-shadow-z2: 0 8px 24px rgba(0,0,0,.25);
+  --md-shadow-z3: 0 16px 40px rgba(0,0,0,.35);
+}
+
+/* Tipografia */
+.md-typeset { font-size: .75rem; line-height: 1.7; }
+.md-typeset h1, .md-typeset h2, .md-typeset h3 { font-family: "Inter Tight", Inter, system-ui, sans-serif; color: var(--ink); }
+.md-typeset h1 { font-weight: 700; font-size: 1.8rem; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: .6em; }
+.md-typeset h2 { font-weight: 600; font-size: 1.2rem; letter-spacing: -0.025em; margin-top: 2em; }
+.md-typeset h3 { font-weight: 600; font-size: .95rem; letter-spacing: -0.015em; }
+.md-typeset h1 code { color: var(--ink-subtle); font-size: .62em; vertical-align: .2em; background: none; }
+.md-typeset .headerlink { color: var(--accent); }
+.md-typeset :is(p, li, td, dd) > a { text-decoration: underline; text-decoration-color: rgba(239,137,67,.4); text-underline-offset: 3px; }
+.md-typeset :is(p, li, td, dd) > a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.md-typeset .linenos a, .md-typeset .highlight a { text-decoration: none; }
+.md-typeset .md-clipboard { color: var(--ink-subtle); background: transparent; }
+.md-typeset .md-clipboard:hover { color: var(--accent); }
+.md-typeset code { border: 1px solid var(--border); border-radius: 5px; }
+.md-typeset pre > code { border: 0; }
+
+/* Cabeçalho, abas e aviso */
+.md-header { border-bottom: 1px solid var(--border); box-shadow: none; }
+.md-header__title { font-family: "Inter Tight", Inter, sans-serif; font-weight: 700; letter-spacing: -0.04em; }
+.md-header__button.md-logo svg { height: 1.2rem; width: 1.2rem; }
+.md-tabs { border-bottom: 1px solid var(--border); }
+.md-tabs__link { opacity: 1; color: var(--ink-muted); font-weight: 500; }
+.md-tabs__item--active .md-tabs__link { color: var(--ink); }
+.md-tabs__item--active { border-bottom: 2px solid var(--accent-strong); }
+.md-banner { background: var(--accent-soft); color: var(--ink); border-bottom: 1px solid var(--border); }
+.md-banner a { color: var(--accent); }
+.md-search__form, .md-search__button { border-radius: 10px; background: var(--surface-1); border: 1px solid var(--border-strong); color: var(--ink-subtle); }
+.md-search__form:hover, .md-search__button:hover { background: var(--surface-2); color: var(--ink); }
+.md-search__button kbd, .md-search__button .md-search__shortcut { background: transparent; border: 1px solid var(--border-strong); color: var(--ink-subtle); border-radius: 4px; }
+.md-search-result mark { color: var(--accent); }
+.md-search-result__article--document .md-search-result__title, .md-search-result__title { font-weight: 500; }
+
+/* Navegação e índice */
+.md-nav { font-size: .68rem; }
+.md-nav__title { text-transform: uppercase; letter-spacing: .06em; font-size: .55rem; color: var(--ink-subtle); }
+.md-nav__item--section > .md-nav__link { text-transform: uppercase; letter-spacing: .06em; font-size: .55rem; color: var(--ink-subtle); font-weight: 600; }
+.md-nav__link--active, .md-nav__link--active code { color: var(--ink) !important; font-weight: 500; }
+.md-nav--primary .md-nav__link--active { box-shadow: -2px 0 0 var(--accent-strong); }
+.md-nav--secondary .md-nav__link--active { box-shadow: -2px 0 0 var(--accent-strong); padding-left: .4rem; }
+.md-nav__link:hover { color: var(--ink); }
+
+/* Avisos com borda à esquerda, sem faixa de título colorida */
+.md-typeset :is(.admonition, details), .md-typeset :is(.admonition, details):is(.note, .abstract, .info, .tip, .hint, .success, .question, .warning, .failure, .danger, .bug, .example, .quote) { border: 1px solid var(--border); border-left: 3px solid var(--ink-subtle); border-radius: 10px; background: var(--surface-1); box-shadow: none; font-size: .7rem; }
+.md-typeset .admonition-title, .md-typeset summary { background-color: transparent !important; font-weight: 600; }
+.md-typeset .admonition-title::before, .md-typeset summary::before { background-color: var(--ink-subtle) !important; }
+.md-typeset :is(.admonition, details):is(.tip, .hint, .success, .check, .done) { border-left-color: var(--success); }
+.md-typeset :is(.tip, .hint, .success, .check, .done) > :is(.admonition-title, summary)::before { background-color: var(--success) !important; }
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention, .question, .help, .faq) { border-left-color: var(--warning); }
+.md-typeset :is(.warning, .caution, .attention, .question, .help, .faq) > :is(.admonition-title, summary)::before { background-color: var(--warning) !important; }
+.md-typeset :is(.admonition, details):is(.danger, .error, .failure, .fail, .missing, .bug) { border-left-color: var(--danger); }
+.md-typeset :is(.danger, .error, .failure, .fail, .missing, .bug) > :is(.admonition-title, summary)::before { background-color: var(--danger) !important; }
+.md-typeset :is(.admonition, details).example { border-left-color: var(--accent-strong); background: var(--accent-soft); }
+.md-typeset .example > :is(.admonition-title, summary)::before { background-color: var(--accent) !important; }
+
+/* Código: borda, cabeçalho com título, anotações como contas laranja numeradas */
+.md-typeset .highlight, .md-typeset pre { border-radius: 10px; }
+.md-typeset .highlight { border: 1px solid var(--border); overflow: hidden; }
+.md-typeset .highlight span.filename { background: var(--surface-1); border-bottom: 1px solid var(--border); font-family: "JetBrains Mono", monospace; font-weight: 500; color: var(--ink-muted); }
+.md-typeset .highlight .hll { background: var(--accent-soft); box-shadow: inset 2px 0 0 var(--accent-strong); }
+.md-typeset .md-annotation__index { width: auto; animation: none; overflow: visible; vertical-align: 1px; }
+.md-typeset .md-annotation__index::before, .md-typeset .md-annotation__index::after { display: none; }
+.md-typeset .md-annotation__index [data-md-annotation-id] { display: inline-grid !important; place-items: center; min-width: 18px; height: 18px; padding: 0 4px; box-sizing: border-box; border-radius: 999px; background: var(--accent-strong); color: var(--accent-ink); font: 700 10px/1 Inter, sans-serif; }
+.md-typeset .md-annotation__index [data-md-annotation-id]::after { content: attr(data-md-annotation-id); }
+.md-typeset .md-annotation__index:focus-within [data-md-annotation-id], .md-typeset .md-annotation__index:hover [data-md-annotation-id] { box-shadow: 0 0 0 3px rgba(239,137,67,.25); }
+.md-typeset .md-annotation__list { border: 1px solid var(--border); border-radius: 10px; padding: .6em 1em .6em 2.2em; }
+.md-tooltip { background: var(--surface-1); border: 1px solid var(--border-strong); border-radius: 10px; }
+
+/* Abas de conteúdo (dialetos) */
+.md-typeset .tabbed-set { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.md-typeset .tabbed-labels { background: var(--surface-1); box-shadow: inset 0 -1px 0 var(--border); padding: 0 .4rem; }
+.md-typeset .tabbed-labels > label { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: .62rem; color: var(--ink-muted); }
+.md-typeset .tabbed-labels > label:hover { color: var(--ink); }
+.md-typeset .tabbed-content { padding: 0 .6rem; }
+.md-typeset .tabbed-set .highlight { border: 0; }
+.js .md-typeset .tabbed-labels::before { background: var(--accent-strong); }
+
+/* Tabelas */
+.md-typeset table:not([class]) { border: 1px solid var(--border); border-radius: 10px; font-size: .68rem; }
+.md-typeset table:not([class]) th { background: var(--surface-1); color: var(--ink-muted); font-weight: 600; }
+
+/* Rodapé */
+.md-footer { border-top: 1px solid var(--border); }
+.md-footer__link { border: 1px solid var(--border); border-radius: 10px; margin: .6rem; padding: .4rem .8rem; }
+.md-footer__link:hover { border-color: var(--accent-strong); opacity: 1; }
+.md-footer-meta { border-top: 1px solid var(--border); background: var(--bg); }
+.md-top { background: var(--surface-1); color: var(--ink); border: 1px solid var(--border); }
+
+
+
+/* Lista de definição em linha (entradas de configuração: Padrão, Tipo, Na interface) */
+.md-typeset dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .25em 1.4em; align-items: baseline; }
+.md-typeset dt { color: var(--ink-subtle); font-weight: 500; margin: 0; }
+.md-typeset dd { margin: 0 !important; }
+.md-typeset dd > p { margin: 0; }
+
+/* Imagens por tema: ![...](img.png#only-dark) e ![...](img-claro.png#only-light) */
+[data-md-color-scheme="kimball-light"] img[src$="#only-dark"],
+[data-md-color-scheme="kimball-dark"] img[src$="#only-light"] { display: none; }
+
+/* Capturas do app com moldura */
+.md-typeset .km-shot { border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--md-shadow-z2); }
+
+/* Página inicial da documentação */
+.md-typeset .km-lead { font-size: .9rem; line-height: 1.6; color: var(--ink-muted); max-width: 40em; }
+.md-typeset .km-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.2em 0 1.6em; }
+.md-typeset .md-button { border-radius: 10px; font-weight: 500; border: 1px solid var(--border-strong); color: var(--ink); background: var(--surface-1); }
+.md-typeset .md-button:hover { border-color: var(--ink-subtle); color: var(--ink); background: var(--surface-2); }
+.md-typeset .md-button--primary { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--accent-ink); }
+.md-typeset .md-button--primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--accent-ink); opacity: .9; }
+.md-typeset .grid.cards > ul > li, .md-typeset .grid > .card { border: 1px solid var(--border); border-radius: 12px; background: var(--surface-1); box-shadow: none; }
+.md-typeset .grid.cards > ul > li:hover, .md-typeset .grid > .card:hover { border-color: var(--border-strong); box-shadow: none; }
+.md-typeset .grid.cards .twemoji, .md-typeset .grid.cards .lg { color: var(--accent); }
+
+/* Teclas */
+.md-typeset kbd { font-family: var(--font-mono); font-size: .8em; border-radius: 4px; }

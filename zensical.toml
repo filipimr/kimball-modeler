@@ -1,0 +1,132 @@
+# Documentação do Kimball Modeler (Zensical).
+# Gerar:   pip install -r requirements.txt && zensical build --clean && cp -R site/. dist/
+# Prévia:  zensical serve   (só a documentação, em http://localhost:8000/docs/)
+[project]
+site_name = "Kimball Modeler"
+site_description = "Documentação do Kimball Modeler: modelagem de dados com diagrama e DBML, validação por banco, assistente de IA, CLI e MCP."
+site_url = "https://kimball-modeler.pages.dev/docs/"
+copyright = "© 2026 Kimball Modeler · <a href=\"/privacidade.html\">Privacidade</a>"
+docs_dir = "docs"
+site_dir = "dist/docs"
+extra_css = ["stylesheets/extra.css"]
+
+nav = [
+  { "Início" = [
+    "index.md",
+    { "Instalação e atualizações" = "instalacao.md" },
+    { "Primeiros passos" = "primeiros-passos.md" },
+  ] },
+  { "Guia" = [
+    { "Modelagem" = [
+      { "Tabelas e colunas" = "guia/tabelas-e-colunas.md" },
+      { "Relacionamentos" = "guia/relacionamentos.md" },
+      { "Grupos, notas e organização" = "guia/grupos-e-notas.md" },
+      { "Editor DBML" = "guia/editor-dbml.md" },
+      { "Validação e correções" = "guia/validacao.md" },
+    ] },
+    { "Recursos avançados" = [
+      { "Domínios e sequences" = "avancado/dominios-e-sequences.md" },
+      { "Valores de coluna e índices" = "avancado/colunas-e-indices.md" },
+      { "Particionamento" = "avancado/particionamento.md" },
+      { "Roles e permissões" = "avancado/roles-e-permissoes.md" },
+      { "Tabelas stub e código por objeto" = "avancado/stubs-e-codigo.md" },
+    ] },
+    { "Exportar" = [
+      { "Exportação" = "guia/exportar.md" },
+    ] },
+  ] },
+  { "Assistente de IA" = [
+    "assistente/index.md",
+    { "Provedores e modelos" = "assistente/provedores.md" },
+    { "Revisar propostas" = "assistente/propostas.md" },
+    { "Privacidade e segurança" = "assistente/privacidade.md" },
+  ] },
+  { "Bancos de dados" = [
+    "bancos/index.md",
+    { "Converter para outro banco" = "bancos/conversao.md" },
+    { "Importar um banco" = "bancos/importar.md" },
+    { "Conectar no PostgreSQL" = "bancos/conectar-postgresql.md" },
+    { "Comparar e atualizar o banco" = "bancos/comparar-e-atualizar.md" },
+  ] },
+  { "CLI e MCP" = [
+    { "Linha de comando" = [
+      "cli/index.md",
+      { "Referência de comandos" = "cli/comandos.md" },
+      { "Uso em CI/CD" = "cli/ci.md" },
+    ] },
+    { "IA na IDE (MCP)" = [
+      "mcp/index.md",
+      { "Ferramentas" = "mcp/ferramentas.md" },
+      { "Skills" = "mcp/skills.md" },
+    ] },
+  ] },
+  { "Referência" = [
+    { "Atalhos de teclado" = "referencia/atalhos.md" },
+    { "Configurações" = "referencia/configuracoes.md" },
+    { "DBML no Kimball" = "referencia/dbml.md" },
+    { "FAQ e solução de problemas" = "referencia/faq.md" },
+    { "Roadmap" = "referencia/roadmap.md" },
+  ] },
+]
+
+[project.extra]
+homepage = "/"
+
+[project.theme]
+custom_dir = "overrides"
+favicon = "assets/favicon.svg"
+language = "pt-BR"
+font = false
+features = [
+  "announce.dismiss",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "kimball-dark"
+toggle.icon = "lucide/sun"
+toggle.name = "Usar o tema claro"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "kimball-light"
+toggle.icon = "lucide/moon"
+toggle.name = "Usar o tema escuro"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+tables = {}
+toc.permalink = "#"
+toc.permalink_title = "Link para esta seção"
+pymdownx.details = {}
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.snippets = {}
+pymdownx.superfences = {}
+pymdownx.tabbed.alternate_style = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.highlight.extend_pygments_lang = [{ name = "dbml", lang = "js" }]
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"

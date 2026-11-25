@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidade · Kimball Modeler</title>
+<meta name="description" content="O que o Kimball Modeler e este site fazem com os seus dados.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/landing.css">
+</head>
+<body>
+<div class="km-root lp" data-theme="dark">
+<header data-theme="dark" class="km-root lp-header">
+  <nav class="km-nav lp-nav" aria-label="Principal">
+    <a class="km-logo" href="/" aria-label="Kimball Modeler, início"><svg width="24" height="24" viewBox="0 0 120 120" aria-hidden="true"><rect x="20" y="12" width="28" height="96" rx="14" fill="currentColor"/><circle cx="83" cy="36" r="22" fill="var(--accent-strong)"/><circle cx="83" cy="84" r="22" fill="currentColor"/></svg><span class="km-logo__word lp-logo-word">kimball</span></a>
+    <div class="km-nav__links"><a href="/">Início</a><a href="/docs/">Documentação</a></div>
+    <div class="km-nav__actions"><a class="km-btn km-btn--primary km-btn--sm" href="https://github.com/filipimr/kimball-modeler/releases/latest">Baixar</a></div>
+  </nav>
+</header>
+<main class="km-root lp-page" data-theme="dark">
+  <div class="lp-wrap">
+    <h1>Privacidade</h1>
+    <p>Resumo: o Kimball Modeler não coleta dados de uso, e este site não usa cookies nem rastreamento.</p>
+
+    <h2>No app</h2>
+    <ul>
+      <li>Os modelos ficam no seu computador, nos arquivos que você salva (<code>.dbml</code> e <code>.layout.json</code>). Nada é enviado para servidores do Kimball.</li>
+      <li>O app não tem telemetria nem estatísticas de uso.</li>
+      <li>Ao abrir, ele consulta a página de versões no GitHub para saber se há atualização. Essa consulta não envia nada sobre você nem sobre os seus modelos.</li>
+      <li>Senhas de banco e chaves de API ficam no cofre do sistema operacional, nunca no arquivo do projeto.</li>
+      <li>Ao conectar num banco PostgreSQL, a conexão vai direto do seu computador para o servidor que você informou.</li>
+    </ul>
+
+    <h2>No assistente de IA</h2>
+    <ul>
+      <li>O assistente só funciona com o provedor que você conectar, e só envia o que precisa para responder: a estrutura do modelo (tabelas, colunas, tipos, relações) e a sua pergunta. Dados das tabelas nunca são enviados.</li>
+      <li>O que acontece com o texto enviado depende da política do provedor escolhido. Com um modelo local (Ollama), nada sai da sua máquina.</li>
+      <li>As conversas ficam guardadas só no seu computador.</li>
+    </ul>
+
+    <h2>Neste site</h2>
+    <ul>
+      <li>Sem cookies, sem analytics e sem fontes ou scripts de terceiros.</li>
+      <li>O site é servido pela Cloudflare, que registra dados técnicos de acesso (como endereço IP) para operar e proteger o serviço, conforme a política de privacidade dela.</li>
+      <li>Os links de download levam ao GitHub, que tem a sua própria política de privacidade.</li>
+    </ul>
+
+    <h2>Contato</h2>
+    <p>Dúvidas sobre privacidade: <a href="mailto:filipimr@outlook.com">filipimr@outlook.com</a>.</p>
+  </div>
+</main>
+<footer data-theme="dark" class="km-root lp-footer">
+  <div class="lp-wrap lp-footer__inner">
+    <div class="lp-footer__bottom"><span>© 2026 Kimball Modeler</span><span><a href="/" class="lp-footer-link">Voltar para o início</a></span></div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

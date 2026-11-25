@@ -1,19 +1,311 @@
 <!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kimball Modeler</title>
-  </head>
-  <body>
-    <main>
-      <h1>Kimball Modeler</h1>
-      <p>Modelador de bancos de dados multi-dialeto.</p>
-      <p>
-        <a href="https://github.com/filipimr/kimball-modeler/releases/latest">
-          Baixar última versão
-        </a>
-      </p>
-    </main>
-  </body>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kimball Modeler · modelagem de dados que cabe no seu Git</title>
+<meta name="description" content="Desenhe no diagrama ou escreva em DBML, valide para PostgreSQL, SQL Server, Snowflake, MySQL e Oracle e gere DDL e ALTER sem surpresa em produção.">
+<meta property="og:title" content="Kimball Modeler">
+<meta property="og:description" content="Modelagem de dados que cabe no seu Git. Diagrama e DBML no mesmo arquivo, validação por banco e ALTER seguro.">
+<meta property="og:image" content="/docs/assets/tela-area-de-trabalho.png">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/landing.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-merge" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="12" r="2.2"/><path d="M6 7.2v9.6M6 9c0 3 3 3 9.8 3"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M14 3.5H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.5z"/><path d="M14 3.5v5h5M12 17.5v-6M9.5 14l2.5-2.5 2.5 2.5"/></symbol>
+    <symbol id="i-dataset" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M4 9.5h16M4 15h16M10 9.5V20"/></symbol>
+    <symbol id="i-computer" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="11.5" rx="2"/><path d="M8.5 20h7M12 16v4"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path d="M14 3.5H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.5z"/><path d="M14 3.5v5h5M8.5 13h7M8.5 16.5h5"/></symbol>
+    <symbol id="i-speed" viewBox="0 0 24 24"><path d="M4.2 17.5a8.5 8.5 0 1 1 15.6 0"/><path d="M12 13.5l4-4"/><circle cx="12" cy="13.5" r="1.2"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v3.2h3.2"/><path d="M12 8v4.2l2.8 1.8"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3.5v4M15 3.5v4M6.5 7.5h11v3a5.5 5.5 0 0 1-11 0zM12 16v4.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14.5L4.5 10 9 5.5"/><path d="M4.5 10H14a5.5 5.5 0 0 1 0 11h-3"/></symbol>
+    <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="11" rx="2"/><path d="M7 10.5h.01M10.3 10.5h.01M13.6 10.5h.01M17 10.5h.01M8 14h8"/></symbol>
+  </defs>
+</svg>
+
+<div class="km-root lp" data-theme="light">
+
+<header data-theme="light" class="km-root lp-header">
+  <nav class="km-nav lp-nav" aria-label="Principal">
+    <a class="km-logo" href="/" aria-label="Kimball Modeler, início"><svg width="24" height="24" viewBox="0 0 120 120" aria-hidden="true"><rect x="20" y="12" width="28" height="96" rx="14" fill="currentColor"/><circle cx="83" cy="36" r="22" fill="var(--accent-strong)"/><circle cx="83" cy="84" r="22" fill="currentColor"/></svg><span class="km-logo__word lp-logo-word">kimball</span></a>
+    <div class="km-nav__links"><a href="#por-que">Por que Kimball</a><a href="#modelar">Produto</a><a href="#assistente">Assistente</a><a href="#cli">CLI</a><a href="#faq">Dúvidas</a></div>
+    <div class="km-nav__actions"><a class="km-btn km-btn--ghost km-btn--sm" href="/docs/">Documentação</a><a class="km-btn km-btn--primary km-btn--sm" href="https://github.com/filipimr/kimball-modeler/releases/latest">Baixar</a></div>
+  </nav>
+</header>
+
+<main>
+
+<section data-theme="light" class="km-root lp-hero">
+  <div class="lp-hero__text">
+    <p class="km-announce"><span class="km-badge">Novo</span>Assistente de IA: ele propõe, você revisa no diagrama e decide o que entra. <a href="#assistente">Ver como funciona</a></p>
+    <h1 class="lp-h1">Modelagem de dados que cabe no seu <span class="km-hl">Git</span></h1>
+    <p class="lp-lead lp-lead--hero">Desenhe no diagrama ou escreva em DBML: os dois são o mesmo arquivo. Valide para PostgreSQL, SQL Server, Snowflake, MySQL ou Oracle e gere o DDL e o ALTER sem surpresa em produção.</p>
+    <div class="lp-actions"><a class="km-btn km-btn--primary lp-btn-lg" href="https://github.com/filipimr/kimball-modeler/releases/latest">Baixar para Windows</a><a class="km-btn km-btn--ghost lp-btn-lg" href="#modelar">Ver como funciona</a></div>
+    <p class="lp-platforms">Windows 10 e 11 · pacotes para Linux e macOS nas próximas versões</p>
+    <div class="lp-stats"><span><b>5</b> bancos de destino</span><span><b>500+</b> tabelas sem travar</span><span><b>500</b> passos de desfazer</span><span><b>100%</b> offline para modelar</span></div>
+  </div>
+  <div class="lp-figure">
+    <img src="/docs/assets/pipeline-light.svg" alt="" class="lp-figure__art">
+    <div class="km-card km-card--float lp-pr">
+      <div class="lp-pr__head"><svg class="lp-ico" aria-hidden="true"><use href="#i-merge"/></svg>Pull request #42 · <span class="lp-mono-ink">pedidos.dbml</span></div>
+      <div class="km-terminal lp-pr__diff">
+<span class="km-terminal__line km-terminal__dim">  Table pedido {</span>
+<span class="km-terminal__line km-terminal__err">-   status varchar(20)</span>
+<span class="km-terminal__line km-terminal__ok">+   status status_pedido</span>
+<span class="km-terminal__line km-terminal__ok">+   criado_em timestamptz [default: `now()`]</span>
+<span class="km-terminal__line km-terminal__dim">  }</span>
+      </div>
+      <p class="lp-pr__note">Mudou no diagrama, aparece no diff. O time revisa o modelo como revisa código.</p>
+    </div>
+    <div class="km-cmd lp-figure__cmd" aria-hidden="true"><span>/model</span><span>/validate</span><span>/export</span></div>
+  </div>
+</section>
+
+<section id="por-que" data-theme="light" class="km-root lp-sec lp-sec--line">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <h2 class="lp-h2">O diagrama diz uma coisa. O banco faz <span class="km-hl">outra</span>.</h2>
+      <p class="lp-lead">Todo time de dados já viveu isso: o modelo fica velho na segunda sprint e ninguém mais confia nele. O Kimball existe para o modelo voltar a ser a referência.</p>
+    </div>
+    <div class="lp-why">
+      <div class="lp-why__row">
+        <div class="lp-why__bad"><svg class="lp-ico" aria-hidden="true"><use href="#i-close"/></svg><span>O diagrama mora numa ferramenta, o DDL em outra, e os dois se separam na primeira mudança.</span></div>
+        <div class="lp-why__good"><svg class="lp-ico lp-ico--accent" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Um arquivo só.</strong> Diagrama e DBML se atualizam a cada edição, nos dois sentidos, sem perder comentário nem formatação.</span></div>
+      </div>
+      <div class="lp-why__row">
+        <div class="lp-why__bad"><svg class="lp-ico" aria-hidden="true"><use href="#i-close"/></svg><span>O modelo fica preso num formato fechado, longe do Git e do code review.</span></div>
+        <div class="lp-why__good"><svg class="lp-ico lp-ico--accent" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Texto puro.</strong> O .dbml entra no pull request, aparece no diff e se lê sem abrir o app.</span></div>
+      </div>
+      <div class="lp-why__row">
+        <div class="lp-why__bad"><svg class="lp-ico" aria-hidden="true"><use href="#i-close"/></svg><span>O script que roda no PostgreSQL quebra no Snowflake, e você só descobre no deploy.</span></div>
+        <div class="lp-why__good"><svg class="lp-ico lp-ico--accent" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Validação por banco e versão.</strong> Escolha o destino e veja na hora o que bloqueia a exportação e onde um tipo perde informação.</span></div>
+      </div>
+      <div class="lp-why__row">
+        <div class="lp-why__bad"><svg class="lp-ico" aria-hidden="true"><use href="#i-close"/></svg><span>O ALTER é escrito na mão, às pressas, com um DROP escondido no meio.</span></div>
+        <div class="lp-why__good"><svg class="lp-ico lp-ico--accent" aria-hidden="true"><use href="#i-check"/></svg><span><strong>ALTER gerado com segurança.</strong> Cada mudança vem classificada, e o que apaga dados fica desmarcado até você ler o SQL.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="modelar" data-theme="dark" class="km-root lp-sec">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <div class="km-slash"><a class="is-active" href="#modelar">/model</a><a href="#validar">/validate</a><a href="#exportar">/export</a></div>
+      <h2 class="lp-h2">Desenhe rápido. O <span class="km-hl">código</span> acompanha.</h2>
+      <p class="lp-lead">T cria a tabela. 1, 2 ou 3 ligam duas tabelas. A chave estrangeira aparece no diagrama e no DBML, já com o nome certo.</p>
+    </div>
+    <div class="lp-grid lp-grid--2">
+      <div class="km-card lp-card-col">
+        <div><h3 class="km-card__title">O trabalho repetitivo fica com o Kimball</h3><p class="km-card__text">Você pensa no modelo. Propagar, nomear e organizar é com ele.</p></div>
+        <ul class="km-list"><li class="is-active">FK criada no padrão id_cliente</li><li>Tabela associativa pronta no N:N</li><li>Apagou a relação, as colunas dela vão junto</li><li>Diagrama organizado com Shift L</li><li>Fluido com 500+ tabelas abertas</li></ul>
+        <a class="km-btn km-btn--outline km-btn--block lp-push" href="/docs/referencia/atalhos/">Ver os atalhos</a>
+      </div>
+      <div class="km-terminal lp-code" role="region" aria-label="Exemplo de DBML">
+<span class="km-terminal__line km-terminal__dim">// pedidos.dbml</span>
+<span class="km-terminal__line"><span class="t-kw">Table</span> <span class="km-terminal__cmd">cliente</span> {</span>
+<span class="km-terminal__line">  id         <span class="t-number">integer</span> [pk, increment]</span>
+<span class="km-terminal__line">  nome       <span class="t-string">varchar(200)</span> [not null]</span>
+<span class="km-terminal__line">}</span>
+<span class="km-terminal__line"> </span>
+<span class="km-terminal__line"><span class="t-kw">Table</span> <span class="km-terminal__cmd">pedido</span> {</span>
+<span class="km-terminal__line">  id         <span class="t-number">bigint</span> [pk]</span>
+<span class="km-terminal__line">  id_cliente <span class="t-number">integer</span> [not null, <span class="km-terminal__dim">propagated: true</span>]</span>
+<span class="km-terminal__line">  status     <span class="t-custom">status_pedido</span></span>
+<span class="km-terminal__line">  criado_em  <span class="t-time">timestamptz</span> [default: `now()`]</span>
+<span class="km-terminal__line">}</span>
+<span class="km-terminal__line"> </span>
+<span class="km-terminal__line"><span class="t-kw">Ref</span>: pedido.id_cliente &gt; cliente.id</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="validar" data-theme="dark" class="km-root lp-sec lp-sec--line">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <div class="km-slash"><a href="#modelar">/model</a><a class="is-active" href="#validar">/validate</a><a href="#exportar">/export</a></div>
+      <h2 class="lp-h2">Descubra o erro antes do <span class="km-hl">banco</span></h2>
+      <p class="lp-lead">Troque o banco de destino e o modelo é validado na hora contra as regras daquele banco e daquela versão. O que não vai funcionar aparece no diagrama, e não às duas da manhã no deploy.</p>
+    </div>
+    <figure class="lp-shot">
+      <img src="/docs/assets/tela-area-de-trabalho.png" width="1440" height="900" loading="lazy" alt="Kimball Modeler no modo Dividido: diagrama à esquerda, DBML à direita, e o aviso de que o enum status_pedido vira texto no Snowflake.">
+      <div class="lp-problems" aria-label="Problemas">
+        <span class="lp-problems__row"><span class="lp-dot lp-dot--danger" aria-hidden="true"></span><span><span class="lp-mono-ink">pedido.ck_valor</span>: o Snowflake não aplica CHECK. A exportação fica bloqueada até você decidir.</span></span>
+        <span class="lp-problems__row"><span class="lp-dot lp-dot--warning" aria-hidden="true"></span><span><span class="lp-mono-ink">pedido.status</span>: o enum status_pedido vira texto no Snowflake (perda de tipo).</span></span>
+      </div>
+    </figure>
+    <div class="lp-dbs">
+      <p class="lp-dbs__title">Um modelo, cinco bancos</p>
+      <div class="km-integrations lp-dbs__chips" aria-label="Bancos suportados">
+        <span class="km-chip km-chip--brand"><svg width="26" height="26" viewBox="0 0 120 120" aria-hidden="true"><rect x="20" y="12" width="28" height="96" rx="14" fill="currentColor"/><circle cx="83" cy="36" r="22" fill="var(--accent-strong)"/><circle cx="83" cy="84" r="22" fill="currentColor"/></svg></span>
+        <span class="km-integrations__line"></span>
+        <span class="km-chip" title="PostgreSQL">PG</span><span class="km-chip" title="SQL Server">MS</span><span class="km-chip" title="Snowflake">SF</span><span class="km-chip" title="MySQL">MY</span><span class="km-chip" title="Oracle">OR</span>
+        <span class="km-integrations__line lp-dim"></span>
+        <span class="km-chip lp-dim" title="BigQuery, no roadmap">BQ</span><span class="km-chip lp-dim" title="Databricks, no roadmap">DB</span><span class="km-chip lp-dim" title="Redshift, no roadmap">RS</span>
+      </div>
+      <p class="lp-small">PostgreSQL 12 a 18 · SQL Server 2016 a 2025 · Snowflake · MySQL 8.0 a 9.0 · Oracle 19c a 23ai</p>
+      <p class="lp-small">BigQuery, Databricks e Redshift estão no roadmap.</p>
+    </div>
+  </div>
+</section>
+
+<section id="assistente" data-theme="dark" class="km-root lp-sec lp-sec--line">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <p class="km-announce"><span class="km-badge km-badge--soft">Novo</span></p>
+      <h2 class="lp-h2">A IA <span class="km-hl">propõe</span>. Você decide.</h2>
+      <p class="lp-lead">Pergunte sobre uma tabela, peça uma revisão ou descreva o que precisa. O assistente responde como um DBA sênior e, quando sugere uma mudança, ela aparece tracejada em laranja no diagrama. Só entra no modelo quando você clica em Aplicar.</p>
+    </div>
+    <div class="lp-grid lp-grid--2">
+      <div class="lp-chat" role="img" aria-label="Exemplo de conversa com o assistente, terminando numa proposta com três mudanças e os botões Descartar e Aplicar.">
+        <div class="lp-chat__user">Preciso registrar o cancelamento de pedidos. O que muda no modelo?</div>
+        <div class="lp-chat__ai">
+          <span class="lp-chat__avatar"><svg class="lp-ai-mark" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path class="lp-ai-mark__rail" d="M2.5 21 C 9 21, 15 3, 21.5 3"/><circle class="lp-ai-mark__bead" cx="6.4" cy="19.2" r="2.7"/><circle class="lp-ai-mark__bead" cx="12" cy="12" r="3.3"/><circle class="lp-ai-mark__bead" cx="17.6" cy="4.8" r="3.9"/></svg></span>
+          <div class="lp-chat__body">
+            <p>Sugiro uma coluna de data em vez de um booleano: ela diz se e quando o pedido foi cancelado. O índice ajuda os relatórios por cliente e período.</p>
+            <div class="lp-proposal">
+              <div class="lp-proposal__head">Proposta · 3 mudanças<span class="lp-proposal__link">ver no DBML</span></div>
+              <div class="lp-change lp-change--add"><span class="lp-change__sign">+</span><span><code>pedido.cancelado_em timestamptz</code><small>opcional, vazio enquanto o pedido estiver ativo</small></span></div>
+              <div class="lp-change lp-change--mod"><span class="lp-change__sign">~</span><span><code>status_pedido</code><small>ganha o valor cancelado</small></span></div>
+              <div class="lp-change lp-change--add"><span class="lp-change__sign">+</span><span><code>índice pedido(id_cliente, criado_em)</code><small>consultas por cliente e período</small></span></div>
+              <div class="lp-proposal__foot"><span class="lp-proposal__hint">Desfaz com Ctrl Z</span><span class="km-btn km-btn--ghost km-btn--sm">Descartar</span><span class="km-btn km-btn--accent km-btn--sm">Aplicar <kbd>Ctrl Enter</kbd></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="km-card lp-card-col">
+        <div class="lp-feature"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-plug"/></svg><div><h3 class="lp-feature__title">Use o provedor que preferir</h3><p class="km-card__text">Anthropic, OpenAI ou Gemini com a sua chave, Ollama rodando no seu computador ou qualquer servidor compatível com OpenAI. Quem assina o Claude Pro ou Max conecta o Claude Code sem chave de API.</p></div></div>
+        <div class="lp-feature"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-lock"/></svg><div><h3 class="lp-feature__title">Só a estrutura sai do computador</h3><p class="km-card__text">Tabelas, colunas, tipos e relações. Nunca uma linha de dados. A chave fica no cofre do sistema operacional, e as conversas ficam só na sua máquina.</p></div></div>
+        <div class="lp-feature"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-undo"/></svg><div><h3 class="lp-feature__title">Desfaz como qualquer edição</h3><p class="km-card__text">Aplicou e mudou de ideia? Ctrl Z. Para abrir o assistente de qualquer lugar, Ctrl J.</p></div></div>
+        <a class="km-btn km-btn--outline km-btn--block lp-push" href="/docs/assistente/">Como configurar o assistente</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="exportar" data-theme="dark" class="km-root lp-sec lp-sec--line">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <div class="km-slash"><a href="#modelar">/model</a><a href="#validar">/validate</a><a class="is-active" href="#exportar">/export</a></div>
+      <h2 class="lp-h2">Mude o banco sem medo do <span class="km-hl">ALTER</span></h2>
+      <p class="lp-lead">Compare o banco de hoje com o modelo e receba o script pronto. O que é seguro já vem marcado. DROP e recriação de tabela esperam você ler o SQL e decidir.</p>
+    </div>
+    <div class="lp-grid lp-grid--2">
+      <div class="km-terminal lp-code" role="region" aria-label="Exemplo de script de alteração">
+<span class="km-terminal__line km-terminal__cmd">$ kimball diff main.dbml pedidos.dbml --dialect postgres</span>
+<span class="km-terminal__line"><span class="km-terminal__ok">-- [Direct]</span> pedido.criado_em: coluna nova</span>
+<span class="km-terminal__line km-terminal__dim">ALTER TABLE vendas.pedido ADD COLUMN criado_em timestamptz;</span>
+<span class="km-terminal__line"><span class="km-terminal__ok">-- [Direct]</span> fk_pedido_cliente: FK nova</span>
+<span class="km-terminal__line km-terminal__dim">ALTER TABLE vendas.pedido ADD CONSTRAINT fk_pedido_cliente ...;</span>
+<span class="km-terminal__line"><span class="lp-warn">-- [Rebuild] [destrutivo]</span> item_pedido: troca da chave primária</span>
+<span class="km-terminal__line"><span class="km-terminal__err">-- [Unsupported]</span> status_pedido: remover valor de enum</span>
+<span class="km-terminal__line km-terminal__dim">-- não suportado: o PostgreSQL não remove valor de enum</span>
+      </div>
+      <div class="km-card km-card--glow lp-card-col">
+        <div><h3 class="km-card__title">Tudo o que o time pede, do mesmo modelo</h3><p class="km-card__text">O DBA recebe o DDL na ordem certa de dependência. O analista recebe o dicionário. A integração recebe o contrato.</p></div>
+        <ul class="km-list"><li class="is-active">DDL para os cinco bancos, num arquivo ou um por objeto</li><li>Diagrama em PNG, JPG, SVG, PDF e Markdown com Mermaid</li><li>Dicionário de dados em HTML, Word, Excel e CSV</li><li>JSON Schema, XML Schema e dados de teste</li></ul>
+      </div>
+    </div>
+    <figure class="lp-shot">
+      <img src="/docs/assets/tela-diff-e-alter.png" width="1440" height="900" loading="lazy" alt="Comparação entre o banco e o modelo: tabelas novas em verde, alteradas em amarelo e a lista de passos, com os seguros marcados e os destrutivos desmarcados.">
+      <figcaption class="lp-shot__cap">Atualizar o banco: a diferença aparece pintada no diagrama. Verde é novo, amarelo mudou, vermelho sai.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="cli" data-theme="dark" class="km-root lp-sec lp-sec--line">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <h2 class="lp-h2">Feito para quem vive no <span class="km-hl">terminal</span></h2>
+      <p class="lp-lead">O motor do app também roda na linha de comando. Ponha o modelo no pipeline e deixe o CI barrar o que não passa.</p>
+    </div>
+    <div class="km-terminal lp-code" role="region" aria-label="Exemplo de uso da CLI no CI">
+<span class="km-terminal__line km-terminal__dim"># no pipeline, a cada pull request</span>
+<span class="km-terminal__line km-terminal__cmd">$ kimball fmt modelo.dbml --check</span>
+<span class="km-terminal__line km-terminal__cmd">$ kimball validate modelo.dbml --dialect sqlserver --json</span>
+<span class="km-terminal__line km-terminal__cmd">$ kimball diff main.dbml modelo.dbml --dialect sqlserver</span>
+<span class="km-terminal__line km-terminal__cmd">$ kimball export modelo.dbml --dialect sqlserver -o ddl.sql</span>
+    </div>
+    <div class="lp-grid lp-grid--4">
+      <div class="km-card"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-code"/></svg><h3 class="km-card__title lp-card-title">Editor que entende DBML</h3><p class="km-card__text">Autocompletar, erro sublinhado na hora, ir para a definição (F12) e renomear em todo o arquivo (F2). Fora do app, o mesmo servidor de linguagem roda com <code>kimball lsp</code>.</p></div>
+      <div class="km-card"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-upload"/></svg><h3 class="km-card__title lp-card-title">Comece do banco que já existe</h3><p class="km-card__text">Importe scripts do pg_dump, do SSMS, do Snowflake, do mysqldump ou do Oracle, um Modelo Físico XML (.pdm) ou uma planilha. Ou conecte direto no PostgreSQL.</p></div>
+      <div class="km-card"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-dataset"/></svg><h3 class="km-card__title lp-card-title">Dados de teste com integridade</h3><p class="km-card__text">INSERTs ou CSV com pais antes de filhos, UNIQUE e enum respeitados, e uma semente para repetir o mesmo resultado.</p></div>
+      <div class="km-card"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-keyboard"/></svg><h3 class="km-card__title lp-card-title">A IA da sua IDE também modela</h3><p class="km-card__text">Claude Code, Cursor, VS Code com Copilot, Windsurf, Codex e Claude Desktop usam o Kimball por MCP: 39 ferramentas, com as mesmas regras do app.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-theme="light" class="km-root lp-sec">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <h2 class="lp-h2">O seu modelo continua <span class="km-hl">seu</span></h2>
+      <p class="lp-lead">Nenhum servidor de terceiros guardando o schema da empresa e nenhum formato que só abre numa ferramenta.</p>
+    </div>
+    <div class="lp-grid lp-grid--4">
+      <div class="km-card"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-computer"/></svg><h3 class="km-card__title lp-card-title">Roda no seu computador</h3><p class="km-card__text">É um app desktop. O modelo é um .dbml e um .layout.json na sua pasta, prontos para o Git.</p></div>
+      <div class="km-card"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-text"/></svg><h3 class="km-card__title lp-card-title">Formato aberto</h3><p class="km-card__text">DBML é texto aberto e documentado. Dá para ler, revisar e comparar sem o app instalado.</p></div>
+      <div class="km-card"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-speed"/></svg><h3 class="km-card__title lp-card-title">Leve com modelo grande</h3><p class="km-card__text">Pensado para 500+ tabelas, com organização automática que você cancela com Esc.</p></div>
+      <div class="km-card"><svg class="lp-ico lp-ico--accent lp-ico--lg" aria-hidden="true"><use href="#i-history"/></svg><h3 class="km-card__title lp-card-title">Nada se perde</h3><p class="km-card__text">500 passos de desfazer, salvamento automático a cada 10 minutos e recuperação se o app fechar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" data-theme="light" class="km-root lp-sec lp-sec--faq">
+  <div class="lp-wrap lp-wrap--narrow">
+    <h2 class="lp-h2 lp-h2--faq">Dúvidas de quem está chegando</h2>
+    <div class="lp-faq">
+      <details open><summary>Preciso saber DBML para usar?<svg class="lp-ico" aria-hidden="true"><use href="#i-chevron"/></svg></summary><p>Não. Dá para fazer tudo no diagrama, e o DBML é escrito para você. Quem prefere código edita o texto direto, com autocompletar e checagem de erro.</p></details>
+      <details><summary>Funciona com o meu banco?<svg class="lp-ico" aria-hidden="true"><use href="#i-chevron"/></svg></summary><p>O Kimball gera e valida DDL para PostgreSQL (12 a 18), SQL Server (2016 a 2025), Snowflake, MySQL (8.0 a 9.0) e Oracle (19c a 23ai), com as regras da versão que você escolher. A conexão direta com o banco, por enquanto, é só com PostgreSQL.</p></details>
+      <details><summary>Consigo trazer o banco que eu já tenho?<svg class="lp-ico" aria-hidden="true"><use href="#i-chevron"/></svg></summary><p>Sim. Importe scripts SQL ou DDL (vários de uma vez), um Modelo Físico XML (.pdm) com as posições do diagrama, ou uma planilha .xlsx, .ods ou .csv com tabelas e colunas. No PostgreSQL, dá para conectar e ler o schema direto.</p></details>
+      <details><summary>A IA vê os meus dados?<svg class="lp-ico" aria-hidden="true"><use href="#i-chevron"/></svg></summary><p>Não. O assistente recebe só a estrutura do modelo: tabelas, colunas, tipos e relações. Você escolhe o provedor e pode usar um modelo local com Ollama, sem nada sair da sua máquina.</p></details>
+      <details><summary>Onde o meu modelo fica salvo?<svg class="lp-ico" aria-hidden="true"><use href="#i-chevron"/></svg></summary><p>Na sua máquina, em dois arquivos: o .dbml com o modelo e o .layout.json com as posições do diagrama. Versione os dois no Git.</p></details>
+      <details><summary>O script de alteração pode apagar dados?<svg class="lp-ico" aria-hidden="true"><use href="#i-chevron"/></svg></summary><p>Só se você mandar. Todo DROP e toda recriação de tabela aparecem destacados e desmarcados, e você vê o SQL antes de incluir. Para rodar direto no banco, o app lista cada passo destrutivo e pede confirmação.</p></details>
+      <details><summary>Encontrei um problema. Como aviso?<svg class="lp-ico" aria-hidden="true"><use href="#i-chevron"/></svg></summary><p>Abra uma <a href="https://github.com/filipimr/kimball-modeler/issues">issue no GitHub</a> com o passo a passo e, se puder, um trecho do modelo. Sugestões também são bem-vindas por lá. Para outros assuntos, escreva para <a href="mailto:filipimr@outlook.com">filipimr@outlook.com</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section data-theme="dark" class="km-root lp-sec lp-cta">
+  <div class="lp-wrap lp-wrap--cta">
+    <h2 class="lp-h1 lp-h1--cta">Modele uma vez. Exporte para <span class="km-hl">cinco bancos</span>.</h2>
+    <p class="lp-lead">Baixe, abra o exemplo Northwind e veja o diagrama, o DBML e o DDL andando juntos.</p>
+    <div class="lp-actions"><a class="km-btn km-btn--primary lp-btn-lg" href="https://github.com/filipimr/kimball-modeler/releases/latest">Baixar</a><a class="km-btn km-btn--ghost lp-btn-lg" href="mailto:filipimr@outlook.com">Falar com a gente</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer data-theme="dark" class="km-root lp-footer">
+  <div class="lp-wrap lp-footer__inner">
+    <div class="lp-footer__top">
+      <a class="km-logo" href="/" aria-label="Kimball Modeler, início"><svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><rect x="20" y="12" width="28" height="96" rx="14" fill="currentColor"/><circle cx="83" cy="36" r="22" fill="var(--accent-strong)"/><circle cx="83" cy="84" r="22" fill="currentColor"/></svg><span class="km-logo__word lp-footer__word">kimball<span class="km-logo__sub"> modeler</span></span></a>
+      <p class="lp-footer__contact">Dúvida, sugestão ou bug? <a href="https://github.com/filipimr/kimball-modeler/issues">Abra uma issue</a> ou escreva para <a href="mailto:filipimr@outlook.com">filipimr@outlook.com</a>.</p>
+    </div>
+    <div class="lp-footer__cols">
+      <div><span class="lp-footer__h">Produto</span><a href="#modelar">Modelagem</a><a href="#validar">Validação</a><a href="#assistente">Assistente de IA</a><a href="#exportar">Exportação</a><a href="#cli">CLI</a></div>
+      <div><span class="lp-footer__h">Documentação</span><a href="/docs/primeiros-passos/">Primeiros passos</a><a href="/docs/assistente/">Assistente de IA</a><a href="/docs/bancos/">Bancos de dados</a><a href="/docs/cli/">CLI e MCP</a><a href="/docs/referencia/atalhos/">Atalhos</a></div>
+      <div><span class="lp-footer__h">Suporte</span><a href="https://github.com/filipimr/kimball-modeler/releases/latest">Downloads</a><a href="https://github.com/filipimr/kimball-modeler/issues">Issues no GitHub</a><a href="mailto:filipimr@outlook.com">E-mail</a><a href="/docs/referencia/roadmap/">Roadmap</a></div>
+      <div><span class="lp-footer__h">Legal</span><a href="/privacidade.html">Privacidade</a><a href="/docs/assets/fonts/OFL.txt">Licença das fontes</a></div>
+    </div>
+    <div class="lp-footer__bottom"><span>© 2026 Kimball Modeler</span><span>Feito no Brasil, em português</span></div>
+  </div>
+</footer>
+
+</div>
+</body>
 </html>

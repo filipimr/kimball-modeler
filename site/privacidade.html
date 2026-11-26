@@ -29,7 +29,7 @@
     <h2>No app</h2>
     <ul>
       <li>Os modelos ficam no seu computador, nos arquivos que você salva (<code>.dbml</code> e <code>.layout.json</code>). Nomes de tabelas, colunas, schemas, SQL ou DBML nunca são enviados.</li>
-      <li>Para entender quais telas, recursos e dialetos ajudam mais, o app envia eventos anônimos e agregados (como versão, sistema operacional, tipo de tela aberta e dialeto escolhido) com um identificador aleatório local, sem IP e sem terceiros. Você pode desativar com 1 clique em <strong>Configurações → Geral</strong> ou definindo a variável de ambiente <code>KIMBALL_TELEMETRY=0</code>.</li>
+      <li>Para entender quais telas, recursos e dialetos ajudam mais, o app envia eventos anônimos e agregados (como versão, sistema operacional, tipo de tela aberta e dialeto escolhido) com um identificador aleatório local e sem terceiros; o IP não é guardado. Você pode desativar com 1 clique em <strong>Configurações → Geral</strong> ou definindo a variável de ambiente <code>KIMBALL_TELEMETRY=0</code>.</li>
       <li>Ao abrir, ele consulta a página de versões no GitHub para saber se há atualização. Essa consulta não envia nada sobre você nem sobre os seus modelos.</li>
       <li>Senhas de banco e chaves de API ficam no cofre do sistema operacional, nunca no arquivo do projeto.</li>
       <li>Ao conectar num banco PostgreSQL, a conexão vai direto do seu computador para o servidor que você informou.</li>

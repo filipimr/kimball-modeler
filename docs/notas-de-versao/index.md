@@ -4,6 +4,7 @@ Tudo o que mudou em cada versão do Kimball Modeler: recursos novos, correções
 
 | Versão | Data | Tipo | Resumo |
 | --- | --- | --- | --- |
+| [0.2.0](0.2.0.md) | 26/11/2026 | Menor | Telemetria anônima de uso (pode ser desligada); Exportar no modo DBML e com o Assistente aberto; botão do Assistente |
 | [0.1.1](0.1.1.md) | 25/11/2026 | Correção | MySQL e Oracle em Exportar, seletor de modelo do assistente e "Neste projeto" |
 | [0.1.0](0.1.0.md) | 25/11/2026 | Inicial | Primeira versão pública |
 

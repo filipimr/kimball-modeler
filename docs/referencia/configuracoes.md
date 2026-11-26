@@ -14,6 +14,11 @@ Como o Kimball guarda o seu trabalho.
 **Validar antes de salvar, exportar e comparar**
 :   Ligado por padrão. Ao salvar, o app avisa dos erros. Exportar o DDL e comparar com o banco esperam a correção. Veja [Validação e correções](../guia/validacao.md).
 
+### Privacidade e telemetria
+
+**Enviar estatísticas anônimas de uso**
+:   Ligado por padrão. Envia só contagens de uso (versão, sistema, visualização e folha abertas, banco escolhido), com um identificador aleatório. Nunca envia nomes de tabelas ou colunas, DBML, SQL, conversas com o Assistente ou senhas, e o IP não é guardado. Em ambientes corporativos, `KIMBALL_TELEMETRY=0` desliga para todos. Veja a [Privacidade](/privacidade.html).
+
 ### Salvamento e segurança
 
 Este quadro é informativo:

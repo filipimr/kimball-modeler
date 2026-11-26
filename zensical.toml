@@ -69,6 +69,7 @@ nav = [
   ] },
   { "Notas de versão" = [
     "notas-de-versao/index.md",
+    { "0.2.0" = "notas-de-versao/0.2.0.md" },
     { "0.1.1" = "notas-de-versao/0.1.1.md" },
     { "0.1.0" = "notas-de-versao/0.1.0.md" },
   ] },

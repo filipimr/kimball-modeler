@@ -74,7 +74,7 @@ Note leia_me {
 | Onde | Marcação | Para quê |
 |---|---|---|
 | Ref | `propagated: true` | as colunas FK do filho foram criadas pela relação e a acompanham (apagar a relação apaga as colunas) |
-| Ref | `fk_index: btree` | a relação mantém um índice nas colunas FK do filho |
+| Ref | `fk_index: 'btree'` | a relação mantém um índice nas colunas FK do filho |
 | Ref | `deferrable` ou `deferrable: deferred` | FK adiável, conferida no commit (onde o banco tem) |
 | Ref | `match: full` | MATCH FULL, em FK de várias colunas |
 | Ref | `fk_constraint: false` | FK lógica: aparece no diagrama e na documentação, sem constraint no DDL |
